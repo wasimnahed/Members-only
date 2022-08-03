@@ -1,0 +1,23 @@
+{{#if error_msg}}
+  {{#each error_msg}}
+    <p class="alert alert-warning text-center">{{this}}</p>
+  {{/each}}
+{{/if}}
+
+{{#if success_msg}}
+  {{#each success_msg}}
+    <p class="alert alert-success text-center">{{this}}</p>
+  {{/each}}
+{{/if}}
+
+{{#if info_msg}}
+  {{#each info_msg}}
+    <p class="alert alert-info text-center">{{this}}</p>
+  {{/each}}
+{{/if}}
+
+{{#if error}}
+  {{#each error}}
+    <p class="alert alert-warning text-center">{{this}}</p>
+  {{/each}}
+{{/if}}

@@ -1,0 +1,26 @@
+<div class="form-container">
+  <div class="form-heading">
+    <h1>Login</h1>
+    {{> _flash_errors}}
+  </div>
+  <form action="/login" method="POST" class="signup-form">
+    <div class="form-row">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        required
+        autofocus
+        value="{{ fields.username }}"
+      />
+    </div>
+    <div class="form-row">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required />
+    </div>
+    <div class="form-row">
+      <input type="submit" value="Submit" class="submit-btn" />
+    </div>
+  </form>
+</div>

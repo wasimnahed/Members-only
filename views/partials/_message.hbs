@@ -1,0 +1,29 @@
+{{#if messages}}
+{{#each messages}}
+<div class="card bg-light mb-3" style="max-width:100%;">
+  <div class="card-header">{{ this.title }}</div>
+  <div class="card-body ">
+    {{#if ../currentUser.isMember}}
+    <h5 class="card-title">Author: {{ this.author.name }}</h5>
+    {{/if}}
+    <p class="card-text">{{ this.content }}</p>
+    {{#if ../allowDeleteButton}}
+    <div class="card-footer row">
+      <div class="col-4">
+        <a href="/messages/delete/{{ this.id }}">
+          <button class="btn btn-danger">Delete</button>
+        </a>
+      </div>
+      <div class="col-8 align-bottom">
+        <span class="align-text-top">{{ this.dateCreated }}</span>
+      </div>
+    </div>
+    {{else}}
+    <div class="card-footer text-right">
+      {{ this.dateCreated }}
+    </div>
+    {{/if}}
+  </div>
+</div>
+{{/each}}
+{{/if}}

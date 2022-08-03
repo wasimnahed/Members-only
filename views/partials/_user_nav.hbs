@@ -1,0 +1,30 @@
+<ul class="nav flex-column ">
+  {{#unless currentUser.isMember}}
+  {{#unless currentUser.isAdmin}}
+  <li class="nav-item">
+    <a class="nav-link pl-0" href="/users/join">Join The Club</a>
+  </li>
+  {{/unless}}
+  {{/unless}}
+  {{#unless currentUser.isAdmin}}
+  <li class="nav-item">
+    <a class="nav-link pl-0" href="/users/admin">Become An Admin</a>
+  </li>
+  {{/unless}}
+  <li class="nav-item">
+    <a class="nav-link pl-0" href="/messages">Show All Messages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link pl-0" href="/messages/create">Create a Message</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link pl-0" href="/messages/users/{{ currentUser.id }}"
+      >View Your Messages</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link pl-0" href="/messages/users/{{ currentUser.id }}"
+      >Delete Your Messages</a
+    >
+  </li>
+</ul>

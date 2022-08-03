@@ -1,0 +1,43 @@
+<h1 class="text-center">Secret Password</h1>
+<div class="container text-center">
+  <button
+    type="button"
+    onclick="displayHint()"
+    class="btn btn-outline-info btn-sm"
+  >
+    Hint
+  </button>
+  <p id="toggle" class="mt-3" style="display:none;">
+    Reverse of 24
+  </p>
+  {{#if guess}}
+  <p class="alert alert-info mt-3">Guess Again</p>
+  {{/if}}
+</div>
+<form action="/users/join" method="post">
+  <div class="form-group mt-4">
+    <input
+      type="text"
+      class="form-control my-4"
+      name="password"
+      id="password"
+      placeholder="Secret Password"
+      value="{{ guess }}"
+    />
+    <input
+      type="hidden"
+      name="userid"
+      id="userid"
+      value="{{ currentUser.id }}"
+    />
+    <div class="container text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+<script>
+  function displayHint() {
+    document.getElementById("toggle").style = "display: block;";
+  }
+</script>

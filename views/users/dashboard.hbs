@@ -1,0 +1,9 @@
+{{> _flash_errors}}
+
+{{#if  currentUserIsMember}}
+<p>current user is a member</p>
+{{else}}
+{{> _welcome_msg}}
+{{/if}}
+
+<p>current userid: {{currentUser.id}}</p>

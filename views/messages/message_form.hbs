@@ -1,0 +1,42 @@
+<div class="form-container">
+  <div class="form-heading">
+    <h1>Create Message</h1>
+    {{> _errors}}
+  </div>
+  <form action="/messages/create" method="POST" class="message-form">
+    <div class="form-row">
+      <label for="first_name">Title</label>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        required
+        minlength="4"
+        value="{{ fields.title }}"
+      />
+    </div>
+    <div class="form-row">
+      <label for="last_name">Content</label>
+      <input
+        type="text"
+        name="content"
+        id="content"
+        required
+        minlength="4"
+        value="{{ fields.content }}"
+      />
+    </div>
+    <div class="form-row">
+      <input
+        type="hidden"
+        name="userid"
+        id="userid"
+        value="{{ currentUser.id }}"
+      />
+    </div>
+
+    <div class="form-row">
+      <input type="submit" value="Submit" class="submit-btn" />
+    </div>
+  </form>
+</div>
